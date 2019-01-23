@@ -2,24 +2,25 @@
 import { ApiRequest } from '../src/api_request';
 
 describe('ApiRequest', () => {
-  let apiCall;
+  let request;
   beforeEach(() => {
-    apiCall = new ApiRequest();
+    request = new ApiRequest();
   });
 
   it('creates a new instance of ApiRequest', () => {
-    expect(apiCall instanceof ApiRequest).toEqual(true);
+    expect(request instanceof ApiRequest).toEqual(true);
   });
 
-  it('searches for a book and returns a response', () => {
+  it('searches for a book and returns a response', async () => {
     const search = 'children+of+blood+and+bone';
-    const response = apiCall.main(search)
+    const response = await request.makeCall(search)
     expect(response).toBeDefined();
   });
 
-  it('searches for a specific book and returns data about that book', () => {
+  it('searches for a specific book and returns data about that book', async () => {
     const search = 'children+of+blood+and+bone';
-    const response = apiCall.main(search)
+    const response = await request.makeCall(search)
+    console.log(response)
     expect(response['items'][0]['volumeInfo']['title']).toEqual('Children of Blood and Bone');
   });
 });

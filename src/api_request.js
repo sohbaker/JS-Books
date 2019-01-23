@@ -1,41 +1,19 @@
 // jshint esversion: 6
 const request = require('request-promise');
-
-const yourAPIKey = 'AIzaSyA9aYlRmmcP0C_Mb5iqFd-mhxNJmndNUsw';
+const fetch = require("node-fetch");
+require('dotenv').config();
 
 export class ApiRequest {
-  initialize(search) {
-    const options = {
-      url: `https://www.googleapis.com/books/v1/volumes?q=${search}&key=${yourAPIKey}`,
-      headers: {
-        'User-Agent': 'request',
-      },
-    };
+  async makeCall(search) {
+    const url = `https://www.googleapis.com/books/v1/volumes?q=${search}`;
 
-    const myPromise = new Promise((resolve, reject) => {
-      request.get(options, (err, resp, body) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(JSON.parse(body));
-        }
-      });
-    });
-    return myPromise;
-  }
-
-  main(search) {
-    const initializePromise = this.initialize(search);
-    initializePromise.then((result) => {
-      const bookData = result;
-      console.log('Initialized book data');
-      return bookData;
-    }, (err) => {
-      const message = `Unexpected error occurred: ${err}`;
-      return message;
-    });
+    try {
+      const response = await fetch(url + "&key=" + process.env.API_KEY);
+      const data = await response.json();
+      if (!data) return `book not found`;
+      return data;
+    } catch(error) {
+      return `Unexpected error occurred: ${error}`;
+    }
   }
 }
-
-const api = new ApiRequest();
-api.main();
