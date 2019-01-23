@@ -20,7 +20,6 @@ describe('ApiRequest', () => {
   it('searches for a specific book and returns data about that book', async () => {
     const search = 'children+of+blood+and+bone';
     const response = await request.makeCall(search)
-    console.log(response)
     expect(response['items'][0]['volumeInfo']['title']).toEqual('Children of Blood and Bone');
   });
 });
