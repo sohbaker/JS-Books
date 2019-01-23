@@ -16,8 +16,8 @@ describe('Books', () => {
     expect(response).toBeDefined();
   });
 
-  it('returns data about the search item', async () => {
-    const response = await books.getData('five+love+languages')
-    expect(response['items'][0]['volumeInfo']['title']).toEqual('The Five Love Languages');
+  it('returns an object containing data about books mathching the search item', async () => {
+    const response = await books.getData('hello')
+    expect(typeof response).toEqual('object');
   });
 });
