@@ -12,18 +12,18 @@ export class Books {
   }
 
   async collectData(input) {
-    let data = await this.doSearch(input);
-    let bookData = []
+    const data = await this.doSearch(input);
+    const bookData = [];
 
-    data.items.forEach(function(hash) {
+    data.items.forEach((hash) => {
       bookData.push({
         title: hash.volumeInfo.title,
         author: hash.volumeInfo.authors,
         publisher: hash.volumeInfo.publishedDate,
         image: hash.volumeInfo.imageLinks.thumbnail,
         link: hash.volumeInfo.canonicalVolumeLink,
-      })
-    })
+      });
+    });
     return bookData;
   }
 }

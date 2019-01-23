@@ -22,20 +22,20 @@ describe('Books', () => {
   });
 
   it('creates an object containing selected data returned by the search', async () => {
-    const response = await books.doSearch('hello')
-    const data = books.collectData()
+    const data = books.collectData('hello')
     expect(typeof data).toEqual('object');
   });
 
-    it('collects specific data returned by the search such as the book title', async () => {
-      const data = await books.collectData('goodbye')
-      expect(data).toEqual(
-        expect.arrayContaining([
-          expect.objectContaining({
-            title: expect.any(String),
-            author: expect.anything()
-          })
-        ])
-      );
-    });
+  it('collects specific data returned by the search such as the book title', async () => {
+    const data = await books.collectData('goodbye')
+    expect(data).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          title: expect.any(String),
+          author: expect.any(String),
+          publisher: expect.anything(),
+        }),
+      ]),
+    );
+  });
 });
