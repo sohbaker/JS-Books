@@ -11,16 +11,17 @@ export class Books {
     return dataReturn;
   }
 
-  async collectData() {
-    let data = await this.doSearch('hello');
+  async collectData(input) {
+    let data = await this.doSearch(input);
     let bookData = []
 
     data.items.forEach(function(hash) {
       bookData.push({
         title: hash.volumeInfo.title,
-        author: hash.volumeInfo.authors[0],
-        publisher: hash.volumeInfo.authors.publishedDate,
+        author: hash.volumeInfo.authors,
+        publisher: hash.volumeInfo.publishedDate,
         image: hash.volumeInfo.imageLinks.thumbnail,
+        link: hash.volumeInfo.canonicalVolumeLink,
       })
     })
     return bookData;

@@ -27,8 +27,8 @@ describe('Books', () => {
     expect(typeof data).toEqual('object');
   });
 
-    it('collects specific returned by the search such as the book title', async () => {
-      const data = await books.collectData()
+    it('collects specific data returned by the search such as the book title', async () => {
+      const data = await books.collectData('goodbye')
       expect(data).toEqual(
         expect.arrayContaining([
           expect.objectContaining({
