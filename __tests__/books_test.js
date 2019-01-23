@@ -16,7 +16,7 @@ describe('Books', () => {
     expect(response).toBeDefined();
   });
 
-  it('returns an object containing data about books mathching the search item', async () => {
+  it('returns an object containing books matching the search term', async () => {
     const response = await books.doSearch('hello')
     expect(typeof response).toEqual('object');
   });
@@ -26,4 +26,16 @@ describe('Books', () => {
     const data = books.collectData()
     expect(typeof data).toEqual('object');
   });
+
+    it('collects specific returned by the search such as the book title', async () => {
+      const data = await books.collectData()
+      expect(data).toEqual(
+        expect.arrayContaining([
+          expect.objectContaining({
+            title: expect.any(String),
+            author: expect.anything()
+          })
+        ])
+      );
+    });
 });

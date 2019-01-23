@@ -12,7 +12,7 @@ export class Books {
   }
 
   async collectData() {
-    const data = await this.doSearch('hello');
+    let data = await this.doSearch('hello');
     let bookData = []
 
     data.items.forEach(function(hash) {
