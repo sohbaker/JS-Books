@@ -7,7 +7,6 @@ async function getSearchResult() {
 
   const data = await books.someFunction();
 
-  // do I want this to be an ordered list?
   books.forEach((obj) => {
     let bookList = document.creatElement('div')
     bookList.setAttribute('class', 'list-of-books')
