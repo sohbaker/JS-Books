@@ -14,8 +14,12 @@ body {
 .flex-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: left;
   margin: 2em;
+  background-color: white;
+  flex-direction: column;
+  font-family: 'EB Garamond', serif;
+  padding: 1.5%;
 }
 
 #header {
