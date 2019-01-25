@@ -32,7 +32,7 @@ describe('Books', () => {
       expect.arrayContaining([
         expect.objectContaining({
           title: expect.any(String),
-          author: expect.any(String),
+          author: expect.any(Object),
           publisher: expect.anything(),
         }),
       ]),
