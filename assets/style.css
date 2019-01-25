@@ -20,6 +20,8 @@ body {
   flex-direction: column;
   font-family: 'EB Garamond', serif;
   padding: 1.5%;
+  border-radius: 10px;
+  width: 45%;
 }
 
 #header {
