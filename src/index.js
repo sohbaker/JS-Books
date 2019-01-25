@@ -3,16 +3,11 @@ import { Books } from './books';
 
 const books = new Books();
 
-async function getSearchResult(query) {
-  const displayResult = document.getElementById('search');
-
-  console.log(query)
-
-  if(query === undefined) {
-    displayResult.innerHTML = 'please enter a search above';
-  } else {
+async function displayBooks(query) {
+  if (query !== undefined) {
+    const displayResult = document.getElementById('search');
+    displayResult.setAttribute('class', 'flex-container');
     const data = await books.collectData(query);
-
     data.forEach((obj) => {
       const bookList = document.createElement('div');
       bookList.setAttribute('class', 'list-of-books');
@@ -29,7 +24,7 @@ async function getSearchResult(query) {
 
       const authors = document.createElement('p');
       authors.setAttribute('id', 'authors');
-      authors.innerHTML = `Author/s: ${obj.authors[0]}`;
+      authors.innerHTML = `Author/s: ${obj.authors}`;
       bookList.appendChild(authors);
 
       const publisher = document.createElement('p');
@@ -51,4 +46,28 @@ async function getSearchResult(query) {
   }
 }
 
-getSearchResult();
+function resetForm() {
+  document.getElementById('inputField').value = '';
+}
+
+function getInput() {
+  const searchValue = document.getElementById('inputField');
+  let input = '';
+
+  searchValue.addEventListener('keydown', (e) => {
+    if (e.keyCode !== 13 && e.keyCode !== 8 && e.keyCode !== 46) {
+      input += e.key;
+    } else if (e.keyCode === 8 || e.keyCode === 46) {
+      const chars = input.split('');
+      chars.pop();
+      input = chars.join('');
+    } else if (e.keyCode === 13) {
+      displayBooks(input);
+      input = '';
+      resetForm();
+    }
+  });
+}
+
+getInput();
+displayBooks();

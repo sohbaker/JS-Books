@@ -42,4 +42,5 @@ input[type="text"] {
   font-family: 'EB Garamond', serif;
   font-size: 15px;
   text-align: center;
+  border-radius: 20px;
 }
