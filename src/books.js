@@ -19,11 +19,12 @@ export class Books {
       bookData.push({
         title: hash.volumeInfo.title,
         author: hash.volumeInfo.authors,
-        publisher: hash.volumeInfo.publishedDate,
+        publisher: hash.volumeInfo.publisher,
         image: hash.volumeInfo.imageLinks.thumbnail,
         link: hash.volumeInfo.canonicalVolumeLink,
       });
     });
+    console.log(bookData);
     return bookData;
   }
 }
