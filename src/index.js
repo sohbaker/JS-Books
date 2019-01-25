@@ -1,39 +1,54 @@
+// jshint esversion: 6
 import { Books } from './books';
 
 const books = new Books();
 
-async function getSearchResult() {
-  const displayResult = document.getElementById('search')
+async function getSearchResult(query) {
+  const displayResult = document.getElementById('search');
 
-  const data = await books.someFunction();
+  console.log(query)
 
-  books.forEach((obj) => {
-    let bookList = document.creatElement('div')
-    bookList.setAttribute('class', 'list-of-books')
+  if(query === undefined) {
+    displayResult.innerHTML = 'please enter a search above';
+  } else {
+    const data = await books.collectData(query);
 
-    let title = document.creatElement('p')
-    title.setAttribute('id', 'title')
-    title.innerHTML = "Title:" + thetitle
-    bookList.appendChild(title)
+    data.forEach((obj) => {
+      const bookList = document.createElement('div');
+      bookList.setAttribute('class', 'list-of-books');
 
-    let author = document.creatElement('p')
-    author.setAttribute('id', 'author')
-    author.innerHTML = "Author/s:" + theauthorwithcommas
-    bookList.appendChild(authors)
+      const thumb = document.createElement('p');
+      thumb.setAttribute('id', 'thumbnail');
+      thumb.innerHTML = `<img src='${obj.image}' alt='image of ${obj.title}' class='thumbnail'/>`;
+      bookList.appendChild(thumb);
 
-    let publisher = document.creatElement('p')
-    publisher.setAttribute('id', 'publisher')
-      if(publisher === 'undefined') {
-        publisher.innerHTML = "Publisher unknown"
-      } else if (publisher !== 'undefined') {
-        publisher.innerHTML = "Publisher:" + publisherinfo
+      const title = document.createElement('p');
+      title.setAttribute('id', 'title');
+      title.innerHTML = `Title: ${obj.title}`;
+      bookList.appendChild(title);
+
+      const authors = document.createElement('p');
+      authors.setAttribute('id', 'authors');
+      authors.innerHTML = `Author/s: ${obj.authors[0]}`;
+      bookList.appendChild(authors);
+
+      const publisher = document.createElement('p');
+      publisher.setAttribute('id', 'publisher');
+      if (obj.publisher === null) {
+        publisher.innerHTML = 'Publisher unknown';
+      } else {
+        publisher.innerHTML = `Publisher: ${obj.publisher}`;
       }
-    bookList.appendChild(publisher)
+      bookList.appendChild(publisher);
 
-    let link = document.creatElement('p')
-    link.setAttribute('id', 'link')
-    link.innerHTML = "<a href=" + link + ">More Info</a>"
-    bookList.appendChild(link)
-  })
-  displayResult.appendChild(bookList)
-};
+      const link = document.createElement('p');
+      link.setAttribute('id', 'link');
+      link.innerHTML = `<a href= ${obj.link}>More Info</a>`;
+      bookList.appendChild(link);
+
+      displayResult.appendChild(bookList);
+    });
+  }
+}
+
+getSearchResult();

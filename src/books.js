@@ -18,7 +18,7 @@ export class Books {
     data.items.forEach((hash) => {
       bookData.push({
         title: hash.volumeInfo.title,
-        author: hash.volumeInfo.authors,
+        authors: hash.volumeInfo.authors,
         publisher: hash.volumeInfo.publisher,
         image: hash.volumeInfo.imageLinks.thumbnail,
         link: hash.volumeInfo.canonicalVolumeLink,
