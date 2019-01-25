@@ -6,43 +6,49 @@ const books = new Books();
 async function getSearchResult(query) {
   const displayResult = document.getElementById('search');
 
-  const data = await books.collectData(query);
+  console.log(query)
 
-  data.forEach((obj) => {
-    const bookList = document.createElement('div');
-    bookList.setAttribute('class', 'list-of-books');
+  if(query === undefined) {
+    displayResult.innerHTML = 'please enter a search above';
+  } else {
+    const data = await books.collectData(query);
 
-    const thumb = document.createElement('p');
-    thumb.setAttribute('id', 'thumbnail');
-    thumb.innerHTML = `<img src='${obj.image}' alt='image of ${obj.title}' class='thumbnail'/>`;
-    bookList.appendChild(thumb);
+    data.forEach((obj) => {
+      const bookList = document.createElement('div');
+      bookList.setAttribute('class', 'list-of-books');
 
-    const title = document.createElement('p');
-    title.setAttribute('id', 'title');
-    title.innerHTML = `Title: ${obj.title}`;
-    bookList.appendChild(title);
+      const thumb = document.createElement('p');
+      thumb.setAttribute('id', 'thumbnail');
+      thumb.innerHTML = `<img src='${obj.image}' alt='image of ${obj.title}' class='thumbnail'/>`;
+      bookList.appendChild(thumb);
 
-    const authors = document.createElement('p');
-    authors.setAttribute('id', 'authors');
-    authors.innerHTML = `Author/s: ${obj.authors[0]}`;
-    bookList.appendChild(authors);
+      const title = document.createElement('p');
+      title.setAttribute('id', 'title');
+      title.innerHTML = `Title: ${obj.title}`;
+      bookList.appendChild(title);
 
-    const publisher = document.createElement('p');
-    publisher.setAttribute('id', 'publisher');
-    if (obj.publisher === null) {
-      publisher.innerHTML = 'Publisher unknown';
-    } else {
-      publisher.innerHTML = `Publisher: ${obj.publisher}`;
-    }
-    bookList.appendChild(publisher);
+      const authors = document.createElement('p');
+      authors.setAttribute('id', 'authors');
+      authors.innerHTML = `Author/s: ${obj.authors[0]}`;
+      bookList.appendChild(authors);
 
-    const link = document.createElement('p');
-    link.setAttribute('id', 'link');
-    link.innerHTML = `<a href= ${obj.link}>More Info</a>`;
-    bookList.appendChild(link);
+      const publisher = document.createElement('p');
+      publisher.setAttribute('id', 'publisher');
+      if (obj.publisher === null) {
+        publisher.innerHTML = 'Publisher unknown';
+      } else {
+        publisher.innerHTML = `Publisher: ${obj.publisher}`;
+      }
+      bookList.appendChild(publisher);
 
-    displayResult.appendChild(bookList);
-  });
+      const link = document.createElement('p');
+      link.setAttribute('id', 'link');
+      link.innerHTML = `<a href= ${obj.link}>More Info</a>`;
+      bookList.appendChild(link);
+
+      displayResult.appendChild(bookList);
+    });
+  }
 }
 
 getSearchResult();
