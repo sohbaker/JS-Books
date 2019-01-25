@@ -24,7 +24,6 @@ export class Books {
         link: hash.volumeInfo.canonicalVolumeLink,
       });
     });
-    console.log(bookData);
     return bookData;
   }
 }
