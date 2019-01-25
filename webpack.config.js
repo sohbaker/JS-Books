@@ -9,7 +9,10 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   node: {
-  fs: 'empty'
+    console: false,
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty',
   },
   plugins: [
     new Dotenv()

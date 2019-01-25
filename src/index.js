@@ -1,13 +1,14 @@
+// jshint esversion: 6
 import { Books } from './books';
 
 const books = new Books();
 
 async function getSearchResult() {
-  const displayResult = document.getElementById('search')
+  const displayResult = document.getElementById('search');
 
-  const data = await books.someFunction();
+  const data = await books.collectData('hello');
 
-  books.forEach((obj) => {
+  data.forEach((obj) => {
     let bookList = document.creatElement('div')
     bookList.setAttribute('class', 'list-of-books')
 
