@@ -3,19 +3,17 @@ import { Books } from './books';
 
 const books = new Books();
 
-async function getSearchResult(query) {
-  const displayResult = document.getElementById('search');
+async function displayBooks(query) {
+  if (query !== undefined) {
+    const container = document.getElementById('container');
+    const displayResult = document.createElement('div');
+    displayResult.setAttribute('class', 'flex-container');
+    displayResult.setAttribute('id', 'books');
 
-  console.log(query)
-
-  if(query === undefined) {
-    displayResult.innerHTML = 'please enter a search above';
-  } else {
     const data = await books.collectData(query);
-
     data.forEach((obj) => {
       const bookList = document.createElement('div');
-      bookList.setAttribute('class', 'list-of-books');
+      bookList.setAttribute('class', 'single-book');
 
       const thumb = document.createElement('p');
       thumb.setAttribute('id', 'thumbnail');
@@ -29,7 +27,7 @@ async function getSearchResult(query) {
 
       const authors = document.createElement('p');
       authors.setAttribute('id', 'authors');
-      authors.innerHTML = `Author/s: ${obj.authors[0]}`;
+      authors.innerHTML = `Author/s: ${obj.authors}`;
       bookList.appendChild(authors);
 
       const publisher = document.createElement('p');
@@ -48,7 +46,42 @@ async function getSearchResult(query) {
 
       displayResult.appendChild(bookList);
     });
+    container.appendChild(displayResult);
   }
 }
 
-getSearchResult();
+function resetForm() {
+  const btn = document.getElementById('new-search');
+  btn.parentNode.removeChild(btn);
+  const booksDiv = document.getElementById('books');
+  booksDiv.parentNode.removeChild(booksDiv);
+  document.getElementById('input-field').value = '';
+}
+
+function getInput() {
+  const searchValue = document.getElementById('input-field');
+  let input = '';
+
+  const inputForm = document.getElementById('input-form');
+
+  searchValue.addEventListener('keydown', (e) => {
+    if (e.keyCode !== 13 && e.keyCode !== 8 && e.keyCode !== 46) {
+      input += e.key;
+    } else if (e.keyCode === 8 || e.keyCode === 46) {
+      const chars = input.split('');
+      chars.pop();
+      input = chars.join('');
+    } else if (e.keyCode === 13) {
+      const btn = document.createElement('button');
+      btn.setAttribute('id', 'new-search');
+      btn.innerHTML = 'New Search';
+      inputForm.appendChild(btn);
+      displayBooks(input);
+      input = '';
+      document.getElementById('new-search').addEventListener('click', resetForm);
+    }
+  });
+}
+
+getInput();
+displayBooks();
