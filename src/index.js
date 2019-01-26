@@ -5,12 +5,15 @@ const books = new Books();
 
 async function displayBooks(query) {
   if (query !== undefined) {
-    const displayResult = document.getElementById('search');
+    const container = document.getElementById('container');
+    const displayResult = document.createElement('div');
     displayResult.setAttribute('class', 'flex-container');
+    displayResult.setAttribute('id', 'books');
+
     const data = await books.collectData(query);
     data.forEach((obj) => {
       const bookList = document.createElement('div');
-      bookList.setAttribute('class', 'list-of-books');
+      bookList.setAttribute('class', 'single-book');
 
       const thumb = document.createElement('p');
       thumb.setAttribute('id', 'thumbnail');
@@ -43,10 +46,13 @@ async function displayBooks(query) {
 
       displayResult.appendChild(bookList);
     });
+    container.appendChild(displayResult);
   }
 }
 
 function resetForm() {
+  const booksDiv = document.getElementById('books');
+  booksDiv.parentNode.removeChild(booksDiv);
   document.getElementById('inputField').value = '';
 }
 
@@ -64,10 +70,11 @@ function getInput() {
     } else if (e.keyCode === 13) {
       displayBooks(input);
       input = '';
-      resetForm();
     }
   });
 }
+
+document.getElementById('newSearch').addEventListener('click', resetForm);
 
 getInput();
 displayBooks();
