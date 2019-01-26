@@ -23,6 +23,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   margin: 1.5%;
 }
 
@@ -47,7 +48,7 @@ input[type="text"] {
   font-style: italic;
 }
 
-#new-search-btn {
+#search-btn {
   font-family: 'Cinzel', serif;
   font-size: 15px;
   text-align: center;
@@ -58,7 +59,7 @@ input[type="text"] {
   font-weight: 600;
 }
 
-#new-search-btn:hover {
+#search-btn:hover {
   background-color: #517732;
   color: white;
 }

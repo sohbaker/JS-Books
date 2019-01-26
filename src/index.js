@@ -26,12 +26,16 @@ async function displayBooks(query) {
 
       const authors = document.createElement('p');
       authors.setAttribute('id', 'authors');
-      authors.innerHTML = `Author/s: ${obj.authors}`;
+      if (obj.authors === undefined) {
+        authors.innerHTML = 'Author unknown';
+      } else {
+        authors.innerHTML = `Author/s: ${obj.authors}`;
+      }
       bookList.appendChild(authors);
 
       const publisher = document.createElement('p');
       publisher.setAttribute('id', 'publisher');
-      if (obj.publisher === null) {
+      if (obj.publisher === undefined) {
         publisher.innerHTML = 'Publisher unknown';
       } else {
         publisher.innerHTML = `Publisher: ${obj.publisher}`;
@@ -49,38 +53,15 @@ async function displayBooks(query) {
   }
 }
 
-function resetForm() {
-  const btn = document.getElementById('new-search-btn');
-  btn.parentNode.removeChild(btn);
-  const booksDiv = document.getElementById('books-result');
-  booksDiv.parentNode.removeChild(booksDiv);
-  document.getElementById('input-field').value = '';
-}
-
 function getInput() {
-  const searchValue = document.getElementById('input-field');
-  let input = '';
-
-  const inputForm = document.getElementById('get-input');
-
-  searchValue.addEventListener('keydown', (e) => {
-    if (e.keyCode !== 13 && e.keyCode !== 8 && e.keyCode !== 46) {
-      input += e.key;
-    } else if (e.keyCode === 8 || e.keyCode === 46) {
-      const chars = input.split('');
-      chars.pop();
-      input = chars.join('');
-    } else if (e.keyCode === 13) {
-      const btn = document.createElement('button');
-      btn.setAttribute('id', 'new-search-btn');
-      btn.innerHTML = 'New Search';
-      inputForm.appendChild(btn);
-      displayBooks(input);
-      input = '';
-      document.getElementById('new-search-btn').addEventListener('click', resetForm);
-    }
-  });
+  const container = document.getElementById('results-container');
+  const searchResults = document.getElementById('results-container').hasChildNodes();
+  if (searchResults === true) {
+    document.getElementById('results-container').removeChild(container.firstChild);
+  }
+  const search = document.getElementById('input-field');
+  displayBooks(search.value);
+  search.value = '';
 }
 
-getInput();
-displayBooks();
+document.getElementById('search-btn').addEventListener('click', getInput);
