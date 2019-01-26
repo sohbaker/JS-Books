@@ -45,7 +45,7 @@ input[type="text"] {
   border-radius: 20px;
 }
 
-.btn {
+#new-search {
   font-family: 'EB Garamond', serif;
   font-size: 15px;
   text-align: center;

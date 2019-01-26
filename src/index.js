@@ -51,6 +51,8 @@ async function displayBooks(query) {
 }
 
 function resetForm() {
+  const btn = document.getElementById('new-search');
+  btn.parentNode.removeChild(btn);
   const booksDiv = document.getElementById('books');
   booksDiv.parentNode.removeChild(booksDiv);
   document.getElementById('input-field').value = '';
@@ -70,7 +72,10 @@ function getInput() {
       chars.pop();
       input = chars.join('');
     } else if (e.keyCode === 13) {
-      inputForm.innerHTML += `<button type='button' class='btn' id='new-search'>New Search</button>`;
+      const btn = document.createElement('button');
+      btn.setAttribute('id', 'new-search');
+      btn.innerHTML = 'New Search';
+      inputForm.appendChild(btn);
       displayBooks(input);
       input = '';
       document.getElementById('new-search').addEventListener('click', resetForm);
