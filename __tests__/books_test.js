@@ -1,5 +1,4 @@
 // jshint esversion: 6
-import { ApiRequest } from '../src/api_request';
 import { Books } from '../src/books';
 
 describe('Books', () => {

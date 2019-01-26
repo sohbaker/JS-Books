@@ -7,7 +7,6 @@ async function displayBooks(query) {
   if (query !== undefined) {
     const container = document.getElementById('results-container');
     const displayResult = document.createElement('div');
-    displayResult.setAttribute('class', 'flex-container');
     displayResult.setAttribute('id', 'books-result');
 
     const data = await books.collectData(query);
@@ -62,7 +61,7 @@ function getInput() {
   const searchValue = document.getElementById('input-field');
   let input = '';
 
-  const inputForm = document.getElementById('input-form');
+  const inputForm = document.getElementById('get-input');
 
   searchValue.addEventListener('keydown', (e) => {
     if (e.keyCode !== 13 && e.keyCode !== 8 && e.keyCode !== 46) {
