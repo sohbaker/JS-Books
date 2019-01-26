@@ -26,12 +26,16 @@ async function displayBooks(query) {
 
       const authors = document.createElement('p');
       authors.setAttribute('id', 'authors');
-      authors.innerHTML = `Author/s: ${obj.authors}`;
+      if (obj.authors === undefined) {
+        authors.innerHTML = 'Author unknown';
+      } else {
+        authors.innerHTML = `Author/s: ${obj.authors}`;
+      }
       bookList.appendChild(authors);
 
       const publisher = document.createElement('p');
       publisher.setAttribute('id', 'publisher');
-      if (obj.publisher === null) {
+      if (obj.publisher === undefined) {
         publisher.innerHTML = 'Publisher unknown';
       } else {
         publisher.innerHTML = `Publisher: ${obj.publisher}`;
