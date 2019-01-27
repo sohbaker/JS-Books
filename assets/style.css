@@ -76,22 +76,28 @@ input[type="text"] {
 .display-results {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-content: stretch;
   background-color: white;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  flex-basis: auto;
   font-family: 'Raleway', sans-serif;
   border-radius: 10px;
   width: 100%;
   min-width: 15vw;
   max-width: 55vw;
   margin-bottom: 1.5%;
+  padding: 2%;
 }
 
 .single-book {
   padding: 1.5%;
   min-width: 10vw;
-  max-width: 15vw;
-  height: 25vh;
+  max-width: 20vw;
+  width: 15vw;
+  min-height: 20vh;
+  flex: 1 0 auto;
+  display: flex;
+  flex-flow: column;
 }
 
 .thumbnail {
