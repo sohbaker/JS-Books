@@ -24,7 +24,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 2% 0 0 0;
+  margin: 2% 0;
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.3);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.3);
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
@@ -42,7 +42,7 @@ input[type="text"] {
   justify-content: center;
   align-items: center;
   width: 70%;
-  margin: 2%;
+  /* margin: 2%; */
   padding: 0.5%;
 }
 
@@ -93,13 +93,13 @@ button:focus {
   width: 100%;
   min-width: 15vw;
   width: 70vw;
-  margin-bottom: 1.5%;
+  margin: 1.5% 0;
 }
 
 .single-book {
   padding: 2%;
   width: 15vw;
-  flex: 1 1 auto;
+  flex: 1 0 auto;
   display: flex;
   flex-basis: auto;
   flex-flow: column;
