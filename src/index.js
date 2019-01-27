@@ -22,30 +22,30 @@ async function displayBooks(query) {
 
       const title = document.createElement('p');
       title.setAttribute('class', 'title');
-      title.innerHTML = `Title: ${obj.title}`;
+      title.innerHTML = `<strong>Title:</strong> ${obj.title}`;
       bookList.appendChild(title);
 
       const authors = document.createElement('p');
       authors.setAttribute('class', 'authors');
       if (obj.authors === undefined) {
-        authors.innerHTML = 'Author unknown';
+        authors.innerHTML = '<i>Author unknown</i>';
       } else {
-        authors.innerHTML = `Author/s: ${obj.authors}`;
+        authors.innerHTML = `<strong>Author/s:</strong> ${obj.authors}`;
       }
       bookList.appendChild(authors);
 
       const publisher = document.createElement('p');
       publisher.setAttribute('class', 'publisher');
       if (obj.publisher === undefined) {
-        publisher.innerHTML = 'Publisher unknown';
+        publisher.innerHTML = '<i>Publisher unknown</i>';
       } else {
-        publisher.innerHTML = `Publisher: ${obj.publisher}`;
+        publisher.innerHTML = `<strong>Publisher:</strong> ${obj.publisher}`;
       }
       bookList.appendChild(publisher);
 
       const link = document.createElement('p');
       link.setAttribute('class', 'link');
-      link.innerHTML = `<a href= ${obj.link}>More Info</a>`;
+      link.innerHTML = `<a href= ${obj.link}><strong>More Info</strong></a>`;
       bookList.appendChild(link);
 
       displayResult.appendChild(bookList);
