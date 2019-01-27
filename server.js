@@ -2,7 +2,7 @@
 const express = require('express');
 const path = require('path');
 
-// const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8080;
 const app = express();
 
 app.use(express.static(__dirname + '/dist'));
@@ -15,4 +15,4 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
 
-app.listen(process.env.PORT || 5000);
+app.listen(port);
