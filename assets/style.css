@@ -24,7 +24,8 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 1.5%;
+  margin: auto;
+  margin-top: 1.5%;
 }
 
 input[type="text"] {
@@ -39,13 +40,14 @@ input[type="text"] {
   justify-content: center;
   align-items: center;
   width: 55%;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
 #input-field {
   width: 100%;
   margin-right: 1.5%;
   height: 30px;
-  font-style: italic;
 }
 
 #search-btn {
@@ -66,19 +68,33 @@ input[type="text"] {
   color: white;
 }
 
-#results-container {
+#results {
   width: 55%;
   padding: 1%;
 }
 
-#books-result {
+.display-results {
   display: flex;
   justify-content: center;
-  align-items: left;
+  align-items: center;
   background-color: white;
-  flex-direction: column;
+  flex-wrap: wrap;
   font-family: 'Raleway', sans-serif;
-  padding: 1.5%;
   border-radius: 10px;
   width: 100%;
+  min-width: 15vw;
+  max-width: 55vw;
+  margin-bottom: 1.5%;
+}
+
+.single-book {
+  padding: 1.5%;
+  min-width: 10vw;
+  max-width: 15vw;
+  height: 25vh;
+}
+
+.thumbnail {
+  height: 100px;
+  text-align: center;
 }
