@@ -17,7 +17,7 @@ async function displayBooks(query) {
 
       const thumb = document.createElement('p');
       thumb.setAttribute('class', 'thumbnail');
-      thumb.innerHTML = `<img src='${obj.image}' alt='image of ${obj.title}' class='thumbnail'/>`;
+      thumb.innerHTML = `<img src='${obj.image}' alt='image of book cover' class='thumbnail'/>`;
       bookList.appendChild(thumb);
 
       const title = document.createElement('p');
@@ -45,7 +45,7 @@ async function displayBooks(query) {
 
       const link = document.createElement('p');
       link.setAttribute('class', 'link');
-      link.innerHTML = `<a href= ${obj.link}><strong>More Info</strong></a>`;
+      link.innerHTML = `<a href= ${obj.link} target='_blank'><strong>More Info</strong></a>`;
       bookList.appendChild(link);
 
       displayResult.appendChild(bookList);
@@ -56,8 +56,8 @@ async function displayBooks(query) {
 
 function getInput() {
   const container = document.getElementById('container');
-  const searchResults = document.getElementById('container').hasChildNodes();
-  if (searchResults === true) {
+  const resultsShowing = document.getElementById('container').hasChildNodes();
+  if (resultsShowing === true) {
     document.getElementById('container').removeChild(container.firstChild);
   }
   const search = document.getElementById('input-field');
