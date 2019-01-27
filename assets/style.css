@@ -1,5 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Sigmar+One);
-@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 
 body {
   background-image: url("book-stack.png");
@@ -12,10 +12,10 @@ body {
 }
 
 #header {
-  font-family: 'Sigmar One', cursive;
+  font-family: 'Abril Fatface', cursive;
   font-size: 3rem;
-  color: #C5E5DC;
-  background-color: #5B2A86;
+  color: #DDC9B4;
+  background-color: #441777;
   padding: 1%;
   box-sizing: border-box;
   width: 70%;
@@ -26,10 +26,13 @@ body {
   text-align: center;
   margin: auto;
   margin-top: 1.5%;
+  -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
 }
 
 input[type="text"] {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 15px;
   text-align: center;
   border-radius: 10px;
@@ -51,21 +54,24 @@ input[type="text"] {
 }
 
 #search-btn {
-  font-family: 'Sigmar One', cursive;
+  font-family: 'Roboto', sans-serif;
   font-size: 15px;
-  color: #5B2A86;
+  color: #441777;
   text-align: center;
   border-radius: 10px;
-  background-color: #C5E5DC;
+  background-color: #DDC9B4;
   cursor: none;
   height: 38px;
   width: 15%;
   font-weight: 1000;
+  -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
 }
 
 #search-btn:hover {
-  background-color: #5B2A86;
-  color: #C5E5DC;
+  background-color: #441777;
+  color: #DDC9B4;
 }
 
 input:focus,
@@ -84,14 +90,13 @@ button:focus {
   display: flex;
   justify-content: center;
   align-content: stretch;
-  background-color: #E8F7E9;
   flex-flow: row wrap;
   flex-basis: auto;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
   border-radius: 10px;
   width: 100%;
   min-width: 15vw;
-  width: 70vw;
+  width: 73vw;
   margin-bottom: 1.5%;
   box-sizing: border-box;
   padding: 2%;
@@ -106,6 +111,12 @@ button:focus {
   flex: 1 0 auto;
   display: flex;
   flex-flow: column;
+  margin: 1%;
+  background-color: #F4E8DC;
+  border-radius: 10px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.3);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.3);
 }
 
 .thumbnail {

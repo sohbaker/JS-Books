@@ -45,7 +45,7 @@ async function displayBooks(query) {
 
       const link = document.createElement('p');
       link.setAttribute('class', 'link');
-      link.innerHTML = `<a href= ${obj.link}><strong>More Info</strong></a>`;
+      link.innerHTML = `<a href= ${obj.link} target='_blank'><strong>More Info</strong></a>`;
       bookList.appendChild(link);
 
       displayResult.appendChild(bookList);
