@@ -1,8 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Cinzel);
+@import url(https://fonts.googleapis.com/css?family=Sigmar+One);
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
 body {
-  background-image: url("books-background.png");
+  background-image: url("book-stack.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -12,13 +12,13 @@ body {
 }
 
 #header {
-  font-family: 'Cinzel', serif;
+  font-family: 'Sigmar One', cursive;
   font-size: 3rem;
-  color: #FFFBBD;
-  background-color: #28502E;
+  color: #C5E5DC;
+  background-color: #5B2A86;
   padding: 1%;
   box-sizing: border-box;
-  width: 55%;
+  width: 70%;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -39,7 +39,7 @@ input[type="text"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 55%;
+  width: 70%;
   padding-top: 2%;
   padding-bottom: 2%;
 }
@@ -51,12 +51,12 @@ input[type="text"] {
 }
 
 #search-btn {
-  font-family: 'Cinzel', serif;
+  font-family: 'Sigmar One', cursive;
   font-size: 15px;
-  color: #28502E;
+  color: #5B2A86;
   text-align: center;
   border-radius: 10px;
-  background-color: #FFFBBD;
+  background-color: #C5E5DC;
   cursor: none;
   height: 38px;
   width: 15%;
@@ -64,12 +64,19 @@ input[type="text"] {
 }
 
 #search-btn:hover {
-  background-color: #517732;
-  color: white;
+  background-color: #5B2A86;
+  color: #C5E5DC;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: 0;
 }
 
 #results {
-  width: 55%;
+  width: 70%;
   padding: 1%;
 }
 
@@ -77,21 +84,21 @@ input[type="text"] {
   display: flex;
   justify-content: center;
   align-content: stretch;
-  background-color: white;
+  background-color: #E8F7E9;
   flex-flow: row wrap;
   flex-basis: auto;
   font-family: 'Raleway', sans-serif;
   border-radius: 10px;
   width: 100%;
   min-width: 15vw;
-  max-width: 55vw;
+  width: 70vw;
   margin-bottom: 1.5%;
   box-sizing: border-box;
   padding: 2%;
 }
 
 .single-book {
-  padding: 1.5%;
+  padding: 2%;
   min-width: 10vw;
   max-width: 20vw;
   width: 15vw;
@@ -106,6 +113,17 @@ input[type="text"] {
   text-align: center;
 }
 
+p {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  margin: 0.5px;
+}
+
+.single-book .title {
+  margin-top: 5%;
+}
 .single-book .link {
   margin-top: auto;
 }
