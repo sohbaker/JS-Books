@@ -9,7 +9,6 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   node: {
-    console: false,
     fs: 'empty',
   },
   plugins: [

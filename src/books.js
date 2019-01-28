@@ -1,5 +1,5 @@
 // jshint esversion: 6
-import { ApiRequest } from '../src/api_request';
+import { ApiRequest } from './api_request';
 
 export class Books {
   constructor() {

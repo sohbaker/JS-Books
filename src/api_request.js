@@ -1,5 +1,5 @@
 // jshint esversion: 6
-const fetch = require("node-fetch");
+const fetch = require('node-fetch');
 require('dotenv').config();
 
 export class ApiRequest {
@@ -11,7 +11,7 @@ export class ApiRequest {
       const data = await response.json();
       if (!data) return 'book not found';
       return data;
-    } catch(error) {
+    } catch (error) {
       return `Unexpected error occurred: ${error}`;
     }
   }
