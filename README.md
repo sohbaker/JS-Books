@@ -10,6 +10,7 @@ This application allows you to:
 
 ## Code
 This project is written in JavaScript ES6 (Vanilla) and also uses Node-js.
+(Note: original GitHub repository: https://github.com/sohbaker/Books-old. Due to issue with folder organisation, subfolder was split out into this repository on 22nd January 2019.)
 
 ## Testing
 Run your tests using `$ npm run test`
