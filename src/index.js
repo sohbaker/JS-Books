@@ -17,7 +17,7 @@ async function displayBooks(query) {
 
       const thumbnail = document.createElement('p');
       thumbnail.setAttribute('class', 'thumbnail');
-      thumbnail.innerHTML = `<img src='${obj.image}' alt='image of book cover' class='thumbnail'/>`;
+      thumbnail.innerHTML = `<img src='${obj.thumbnail}' alt='image of book cover' class='thumbnail'/>`;
       bookList.appendChild(thumbnail);
 
       const title = document.createElement('p');
