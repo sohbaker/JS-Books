@@ -1,25 +1,26 @@
 // jshint esversion: 6
 import { ApiRequest } from '../src/api_request';
+import { Books } from '../src/books';
+
+jest.mock('../src/api_request');
 
 describe('ApiRequest', () => {
-  let request;
   beforeEach(() => {
-    request = new ApiRequest();
+    ApiRequest.mockClear();
   });
 
-  it('creates a new instance of ApiRequest', () => {
-    expect(request instanceof ApiRequest).toEqual(true);
+  it('checks for a new instance of ApiRequest', () => {
+    expect(ApiRequest).not.toHaveBeenCalled();
   });
 
-  it('searches for a book and returns a response', async () => {
+  it('checks whether doSearch function makes an API request', () => {
+    const books = new Books();
+    expect(ApiRequest).toHaveBeenCalledTimes(1);
+
     const search = 'children+of+blood+and+bone';
-    const response = await request.makeCall(search)
-    expect(response).toBeDefined();
-  });
-
-  it('searches for a specific book and returns data about that book', async () => {
-    const search = 'children+of+blood+and+bone';
-    const response = await request.makeCall(search)
-    expect(response['items'][0]['volumeInfo']['title']).toEqual('Children of Blood and Bone');
+    books.doSearch(search);
+    const mockApiRequestInstance = ApiRequest.mock.instances[0];
+    const mockMakeCall = mockApiRequestInstance.makeCall;
+    expect(mockMakeCall).toHaveBeenCalledTimes(1);
   });
 });
