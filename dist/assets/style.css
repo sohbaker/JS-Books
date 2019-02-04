@@ -59,7 +59,7 @@ input[type="text"] {
   text-align: center;
   border-radius: 10px;
   background-color: #DDC9B4;
-  cursor: none;
+  cursor: pointer;
   height: 35px;
   width: 15%;
   font-weight: 1000;
