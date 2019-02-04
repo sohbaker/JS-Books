@@ -15,10 +15,10 @@ async function displayBooks(query) {
       const bookList = document.createElement('div');
       bookList.setAttribute('class', 'single-book');
 
-      const thumb = document.createElement('p');
-      thumb.setAttribute('class', 'thumbnail');
-      thumb.innerHTML = `<img src='${obj.image}' alt='image of book cover' class='thumbnail'/>`;
-      bookList.appendChild(thumb);
+      const thumbnail = document.createElement('p');
+      thumbnail.setAttribute('class', 'thumbnail');
+      thumbnail.innerHTML = `<img src='${obj.image}' alt='image of book cover' class='thumbnail'/>`;
+      bookList.appendChild(thumbnail);
 
       const title = document.createElement('p');
       title.setAttribute('class', 'title');
@@ -43,10 +43,10 @@ async function displayBooks(query) {
       }
       bookList.appendChild(publisher);
 
-      const link = document.createElement('p');
-      link.setAttribute('class', 'link');
-      link.innerHTML = `<a href= ${obj.link} target='_blank'><strong>More Info</strong></a>`;
-      bookList.appendChild(link);
+      const moreInfoLink = document.createElement('p');
+      moreInfoLink.setAttribute('class', 'link');
+      moreInfoLink.innerHTML = `<a href= ${obj.link} target='_blank'><strong>More Info</strong></a>`;
+      bookList.appendChild(moreInfoLink);
 
       displayResult.appendChild(bookList);
     });

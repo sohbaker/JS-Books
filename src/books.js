@@ -11,7 +11,7 @@ export class Books {
     return dataReturn;
   }
 
-  async collectData(input) {
+  async collectData() {
     const data = await this.doSearch(input);
     const bookData = [];
 
@@ -20,7 +20,7 @@ export class Books {
         title: hash.volumeInfo.title,
         authors: hash.volumeInfo.authors,
         publisher: hash.volumeInfo.publisher,
-        image: hash.volumeInfo.imageLinks.thumbnail,
+        thumbnail: hash.volumeInfo.imageLinks.thumbnail,
         link: hash.volumeInfo.canonicalVolumeLink,
       });
     });
