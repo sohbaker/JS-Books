@@ -1,0 +1,68 @@
+[
+  {
+    "kind": "books#volume",
+    "volumeInfo": {
+      "title": "Hello",
+      "authors": [
+        "John Williams"
+      ],
+      "categories": [
+      "Test"
+      ],
+      "averageRating": 4,
+      "ratingsCount": 5,
+      "publisher": "Publishing House",
+      "imageLinks": {
+        "thumbnail": "http://placehold.it/32x32",
+      },
+      "canonicalVolumeLink": "http://placehold.it/32x32",
+    },
+    "saleInfo": {
+      "price": 0
+    }
+  },
+  {
+    "kind": "books#volume",
+    "volumeInfo": {
+      "title": "World",
+      "authors": [
+
+      ],
+      "categories": [
+      "Test"
+      ],
+      "averageRating": 5,
+      "ratingsCount": 12,
+      "publisher": ,
+      "imageLinks": {
+        "thumbnail": "http://placehold.it/32x32",
+      },
+      "canonicalVolumeLink": "http://placehold.it/32x32",
+    },
+    "saleInfo": {
+      "price": 10.32,
+    }
+  },
+  {
+    "kind": "books#volume",
+    "volumeInfo": {
+      "title": "Hello",
+      "authors": [
+        "STACEY JONES, JAMES ACTOR"
+      ],
+      "categories": [
+      "Test"
+      ],
+      "averageRating": 1,
+      "ratingsCount": 47,
+      "publisher": "Pub LishER",
+      "imageLinks": {
+        "thumbnail": "http://placehold.it/32x32",
+      },
+      "canonicalVolumeLink": "http://placehold.it/32x32",
+    },
+    "saleInfo": {
+      "price": 2.35,
+    }
+  },
+]
