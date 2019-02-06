@@ -9,7 +9,7 @@ describe('ApiRequest', () => {
     ApiRequest.mockClear();
   });
 
-  it('checks for a new instance of ApiRequest', () => {
+  it('checks that mock is working', () => {
     expect(ApiRequest).not.toHaveBeenCalled();
   });
 
