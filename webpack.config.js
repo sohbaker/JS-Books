@@ -15,6 +15,6 @@ module.exports = {
     tls: 'empty',
   },
   plugins: [
-    new Dotenv()
-  ]
+    new Dotenv(),
+  ],
 };
