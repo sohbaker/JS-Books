@@ -1,68 +1,79 @@
 // jshint esversion: 6
-import { Books } from './books';
+import { Book } from './book';
+import { SearchResult } from './search_result';
 
-const books = new Books();
-
-async function displayBooks(query) {
-  const container = document.getElementById('container');
-
-  if (query !== undefined) {
-    const displayResult = document.createElement('div');
-    displayResult.setAttribute('class', 'display-results');
-
-    const data = await books.collectData(query);
-    data.forEach((obj) => {
-      const bookList = document.createElement('div');
-      bookList.setAttribute('class', 'single-book');
-
-      const thumb = document.createElement('p');
-      thumb.setAttribute('class', 'thumbnail');
-      thumb.innerHTML = `<img src='${obj.image}' alt='image of book cover' class='thumbnail'/>`;
-      bookList.appendChild(thumb);
-
-      const title = document.createElement('p');
-      title.setAttribute('class', 'title');
-      title.innerHTML = `<strong>Title:</strong> ${obj.title}`;
-      bookList.appendChild(title);
-
-      const authors = document.createElement('p');
-      authors.setAttribute('class', 'authors');
-      if (obj.authors === undefined) {
-        authors.innerHTML = '<i>Author unknown</i>';
-      } else {
-        authors.innerHTML = `<strong>Author/s:</strong> ${obj.authors}`;
-      }
-      bookList.appendChild(authors);
-
-      const publisher = document.createElement('p');
-      publisher.setAttribute('class', 'publisher');
-      if (obj.publisher === undefined) {
-        publisher.innerHTML = '<i>Publisher unknown</i>';
-      } else {
-        publisher.innerHTML = `<strong>Publisher:</strong> ${obj.publisher}`;
-      }
-      bookList.appendChild(publisher);
-
-      const link = document.createElement('p');
-      link.setAttribute('class', 'link');
-      link.innerHTML = `<a href= ${obj.link} target='_blank'><strong>More Info</strong></a>`;
-      bookList.appendChild(link);
-
-      displayResult.appendChild(bookList);
-    });
-    container.appendChild(displayResult);
-  }
-}
-
-function getInput() {
+function clearPage() {
   const container = document.getElementById('container');
   const resultsShowing = document.getElementById('container').hasChildNodes();
-  if (resultsShowing === true) {
+  if (resultsShowing) {
     document.getElementById('container').removeChild(container.firstChild);
   }
-  const search = document.getElementById('input-field');
-  displayBooks(search.value);
-  search.value = '';
 }
 
-document.getElementById('search-btn').addEventListener('click', getInput);
+async function displayBooks(result) {
+  clearPage();
+  const container = document.getElementById('container');
+  const displayResult = document.createElement('div');
+  displayResult.setAttribute('class', 'display-results');
+
+  result.forEach((book) => {
+    const bookDiv = document.createElement('div');
+    bookDiv.setAttribute('class', 'single-book');
+
+    const thumbnail = document.createElement('p');
+    thumbnail.setAttribute('class', 'thumbnail');
+    thumbnail.innerHTML = `<img src='${book.image}' alt='image of book cover' class='thumbnail'/>`;
+    bookDiv.appendChild(thumbnail);
+
+    const title = document.createElement('p');
+    title.innerHTML = `<strong>Title: </strong>${book.title}`;
+    bookDiv.appendChild(title);
+
+    const authors = document.createElement('p');
+    authors.innerHTML = `<strong>Author/s: </strong>${book.authors}`;
+    bookDiv.appendChild(authors);
+
+    const publisher = document.createElement('p');
+    publisher.innerHTML = `<strong>Publisher: </strong>${book.publisher}`;
+    bookDiv.appendChild(publisher);
+
+    const link = document.createElement('p');
+    link.innerHTML = `<a href= ${book.link} target='_blank'><strong>More Info</strong></a>`;
+    bookDiv.appendChild(link);
+
+    displayResult.appendChild(bookDiv);
+  });
+  container.appendChild(displayResult);
+}
+
+// function displaySingleBook() {
+//
+// }
+
+function displayErrorMessage() {
+  clearPage();
+  const container = document.getElementById('container');
+  const errorMessage = document.createElement('div');
+  errorMessage.setAttribute('class', 'error-message');
+  errorMessage.innerHTML = 'invalid search, please try again';
+  container.appendChild(errorMessage);
+}
+
+async function searchHandler() {
+  const searchTerm = document.getElementById('input-field');
+  const result = new SearchResult(searchTerm.value);
+  const success = await result.doSearch()
+  if (!success.error) {
+    searchTerm.value = '';
+    displayBooks(result.createBookObject());
+  } else {
+    displayErrorMessage();
+  }
+}
+
+document.getElementById('search-btn').addEventListener('click', searchHandler);
+document.getElementById('input-field').addEventListener('keypress', (e) => {
+  if (e.keyCode === 13) {
+    searchHandler();
+  }
+}, false);
