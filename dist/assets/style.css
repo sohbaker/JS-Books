@@ -154,3 +154,19 @@ p {
     flex: 1 1 calc(50% - 2rem);
   }
 }
+
+.error-message {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  color: red;
+  width: 70vw;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  background-color: #DDC9B4;
+  margin-top: 2%;
+  padding: 1%;
+  box-sizing: border-box;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.3);
+}
