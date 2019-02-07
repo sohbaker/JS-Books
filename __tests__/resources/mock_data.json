@@ -7,15 +7,15 @@
         "John Williams"
       ],
       "categories": [
-      "Test"
+        "Test"
       ],
       "averageRating": 4,
       "ratingsCount": 5,
       "publisher": "Publishing House",
       "imageLinks": {
-        "thumbnail": "http://placehold.it/32x32",
+        "thumbnail": "http://placehold.it/32x32"
       },
-      "canonicalVolumeLink": "http://placehold.it/32x32",
+      "canonicalVolumeLink": "http://placehold.it/32x32"
     },
     "saleInfo": {
       "price": 0
@@ -26,21 +26,21 @@
     "volumeInfo": {
       "title": "World",
       "authors": [
-
+        "Mr Writer"
       ],
       "categories": [
-      "Test"
+        "Test"
       ],
       "averageRating": 5,
       "ratingsCount": 12,
-      "publisher": ,
+      "publisher": null,
       "imageLinks": {
-        "thumbnail": "http://placehold.it/32x32",
+        "thumbnail": "http://placehold.it/32x32"
       },
-      "canonicalVolumeLink": "http://placehold.it/32x32",
+      "canonicalVolumeLink": "http://placehold.it/32x32"
     },
     "saleInfo": {
-      "price": 10.32,
+      "price": 10.32
     }
   },
   {
@@ -51,18 +51,18 @@
         "STACEY JONES, JAMES ACTOR"
       ],
       "categories": [
-      "Test"
+        "Test"
       ],
       "averageRating": 1,
       "ratingsCount": 47,
       "publisher": "Pub LishER",
       "imageLinks": {
-        "thumbnail": "http://placehold.it/32x32",
+        "thumbnail": "http://placehold.it/32x32"
       },
-      "canonicalVolumeLink": "http://placehold.it/32x32",
+      "canonicalVolumeLink": "http://placehold.it/32x32"
     },
     "saleInfo": {
-      "price": 2.35,
+      "price": 2.35
     }
-  },
+  }
 ]

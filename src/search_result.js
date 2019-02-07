@@ -39,7 +39,7 @@ export class SearchResult {
     return dataArray;
   }
 
-  async addPublisherUnknown() {
+  async changeUndefinedToUnknown() {
     const dataToClean = await this.collectData();
     const clonedData = clonedeep(dataToClean);
     clonedData.forEach((hash) => {
@@ -49,12 +49,4 @@ export class SearchResult {
     });
     return clonedData;
   }
-
-  // async createBookObject() {
-  //   const cleanData = await this.addPublisherUnknown();
-  //   cleanData.forEach((hash) => {
-  //     const singleBook = book.createNewBook(hash.title, hash.authors, hash.publisher, hash.thumbnail, hash.link);
-  //   });
-  //   return singleBook;
-  // }
 }
