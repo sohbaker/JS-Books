@@ -7,7 +7,7 @@
         "John Williams"
       ],
       "categories": [
-      "Test"
+        "Test"
       ],
       "averageRating": 4,
       "ratingsCount": 5,
@@ -26,10 +26,10 @@
     "volumeInfo": {
       "title": "World",
       "authors": [
-
+        "Mr Writer"
       ],
       "categories": [
-      "Test"
+        "Test"
       ],
       "averageRating": 5,
       "ratingsCount": 12,
@@ -51,7 +51,7 @@
         "STACEY JONES, JAMES ACTOR"
       ],
       "categories": [
-      "Test"
+        "Test"
       ],
       "averageRating": 1,
       "ratingsCount": 47,
