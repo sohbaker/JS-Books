@@ -13,9 +13,9 @@
       "ratingsCount": 5,
       "publisher": "Publishing House",
       "imageLinks": {
-        "thumbnail": "http://placehold.it/32x32",
+        "thumbnail": "http://placehold.it/32x32"
       },
-      "canonicalVolumeLink": "http://placehold.it/32x32",
+      "canonicalVolumeLink": "http://placehold.it/32x32"
     },
     "saleInfo": {
       "price": 0
@@ -33,14 +33,14 @@
       ],
       "averageRating": 5,
       "ratingsCount": 12,
-      "publisher": ,
+      "publisher": null,
       "imageLinks": {
-        "thumbnail": "http://placehold.it/32x32",
+        "thumbnail": "http://placehold.it/32x32"
       },
-      "canonicalVolumeLink": "http://placehold.it/32x32",
+      "canonicalVolumeLink": "http://placehold.it/32x32"
     },
     "saleInfo": {
-      "price": 10.32,
+      "price": 10.32
     }
   },
   {
@@ -57,12 +57,12 @@
       "ratingsCount": 47,
       "publisher": "Pub LishER",
       "imageLinks": {
-        "thumbnail": "http://placehold.it/32x32",
+        "thumbnail": "http://placehold.it/32x32"
       },
-      "canonicalVolumeLink": "http://placehold.it/32x32",
+      "canonicalVolumeLink": "http://placehold.it/32x32"
     },
     "saleInfo": {
-      "price": 2.35,
+      "price": 2.35
     }
-  },
+  }
 ]

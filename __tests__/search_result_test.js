@@ -14,11 +14,12 @@ describe('SearchResult', () => {
     dummyFunction.mockReturnValueOnce(json);
     dummyFunction();
     expect(dummyFunction).toHaveReturned();
+    // expect(typeof dummyFunction).toHaveReturned('json');
   });
 
   // it('should collect 5 pieces of data per book returned by search', () => {
   //
-  // expect().something(); 
+  // expect().something();
   // });
   //
   // it('should overwrite undefined value for publisher key with unknown', () => {
