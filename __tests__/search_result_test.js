@@ -1,29 +1,33 @@
 // jshint esversion: 6
 import { ApiRequest } from '../src/api_request';
 import { SearchResult } from '../src/search_result';
+import * as dummyData from './resources/mock_data';
 
-jest.mock('../src/api_request');
-jest.mock('../src/search_result');
+// const api = jest.mock('../src/api_request');
+// const result = jest.mock('../src/search_result');
+let json = JSON.stringify(dummyData);
+json = JSON.parse(json);
 
 describe('SearchResult', () => {
-  beforeEach(() => {
-    ApiRequest.mockClear();
-    SearchResult.mockClear();
+  it('should return a JSON file for a valid search', () => {
+    const dummyFunction = jest.fn(() => true);
+    dummyFunction.mockReturnValueOnce(json);
+    dummyFunction();
+    expect(dummyFunction).toHaveReturned();
   });
 
-  it('checks whether doSearch function returns a result', () => {
-    const searchResult = new SearchResult('foo');
-    searchResult.doSearch();
-    expect(ApiRequest).toHaveBeenCalledTimes(1);
-
-    const search = 'children+of+blood+and+bone';
-    searchResult.doSearch(search);
-    const mockApiRequestInstance = ApiRequest.mock.instances[0];
-    const mockMakeCall = mockApiRequestInstance.makeCall;
-    expect(mockMakeCall).toHaveBeenCalledTimes(1);
-  });
+  // it('should collect 5 pieces of data per book returned by search', () => {
+  //   const dummyFunction = jest.fn();
+  //   dummyFunction.mockReturnValue(json);
+  // });
+  //
+  // it('should overwrite undefined value for publisher key with unknown', () => {
+  //
+  //   expect().something();
+  // });
+  //
+  // it('should create a new instance of book object', () => {
+  //
+  //   expect().something();
+  // });
 });
-
-
-
-// data = require(json file)
