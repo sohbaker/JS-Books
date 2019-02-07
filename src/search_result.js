@@ -50,11 +50,11 @@ export class SearchResult {
     return clonedData;
   }
 
-  async createBookObject() {
-    const cleanData = await this.addPublisherUnknown();
-    cleanData.forEach((hash) => {
-      const singleBook = book.createNewBook(hash.title, hash.authors, hash.publisher, hash.thumbnail, hash.link);
-    });
-    return singleBook;
-  }
+  // async createBookObject() {
+  //   const cleanData = await this.addPublisherUnknown();
+  //   cleanData.forEach((hash) => {
+  //     const singleBook = book.createNewBook(hash.title, hash.authors, hash.publisher, hash.thumbnail, hash.link);
+  //   });
+  //   return singleBook;
+  // }
 }

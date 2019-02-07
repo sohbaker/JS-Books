@@ -22,7 +22,7 @@ async function displayBooks(result) {
 
     const thumbnail = document.createElement('p');
     thumbnail.setAttribute('class', 'thumbnail');
-    thumbnail.innerHTML = `<img src='${book.image}' alt='image of book cover' class='thumbnail'/>`;
+    thumbnail.innerHTML = `<img src='${book.thumbnail}' alt='image of book cover' class='thumbnail'/>`;
     bookDiv.appendChild(thumbnail);
 
     const title = document.createElement('p');
@@ -46,10 +46,6 @@ async function displayBooks(result) {
   container.appendChild(displayResult);
 }
 
-// function displaySingleBook() {
-//
-// }
-
 function displayErrorMessage() {
   clearPage();
   const container = document.getElementById('container');
@@ -65,7 +61,7 @@ async function searchHandler() {
   const success = await result.doSearch()
   if (!success.error) {
     searchTerm.value = '';
-    displayBooks(result.createBookObject());
+    displayBooks(await result.addPublisherUnknown());
   } else {
     displayErrorMessage();
   }
