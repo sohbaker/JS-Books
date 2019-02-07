@@ -12,5 +12,6 @@ describe('SearchResult', () => {
     dummyFunction.mockReturnValueOnce(json);
     dummyFunction();
     expect(dummyFunction).toHaveReturned();
+    // expect(typeof dummyFunction).toHaveReturned('json');
   });
 });
