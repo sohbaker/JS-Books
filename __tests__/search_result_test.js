@@ -17,8 +17,8 @@ describe('SearchResult', () => {
   });
 
   // it('should collect 5 pieces of data per book returned by search', () => {
-  //   const dummyFunction = jest.fn();
-  //   dummyFunction.mockReturnValue(json);
+  //
+  // expect().something(); 
   // });
   //
   // it('should overwrite undefined value for publisher key with unknown', () => {
