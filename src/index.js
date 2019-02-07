@@ -61,7 +61,7 @@ async function searchHandler() {
   const success = await result.doSearch()
   if (!success.error) {
     searchTerm.value = '';
-    displayBooks(await result.addPublisherUnknown());
+    displayBooks(await result.changeUndefinedToUnknown());
   } else {
     displayErrorMessage();
   }
