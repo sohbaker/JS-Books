@@ -31,3 +31,10 @@ This setup uses [AirBnB's defaults](https://github.com/airbnb/javascript). Feel 
 The app entry point is [`dist/index.html`](dist/index.html). Here you can write HTML directly.  
 The JavaScript entry point is [`src/index.js`](src/index.js). Here you can tell your app what to do and how to change.  
 The _actual_ JavaScript that the browser reads is automatically generated, and is in `dist/main.js`. Don't make changes to this directly, you can just change the JavaScript in your `src/` folder!  
+
+--------
+### Things I'd like to work on:
+- Continuing with mock tests for search result class. Understanding how to mock behaviours successfully - created mock file and began to think about what behaviours to test
+- Continuing to work with book_object and implementing Object Oriented Ruby principles - initial thoughts attempted but results we inaccessible to front-end so wouldn't display
+- Add pagination and extend API call to return more than 10 results
+- Explore Atomic Design further
