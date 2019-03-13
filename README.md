@@ -38,6 +38,6 @@ The _actual_ JavaScript that the browser reads is automatically generated, and i
 --------
 ### Things I'd like to work on:
 - Continuing with mock tests for search result class. Understanding how to mock behaviours successfully - created mock file and began to think about what behaviours to test
-- Continuing to work with book_object and implementing Object Oriented Ruby principles - initial thoughts attempted but results we inaccessible to front-end so wouldn't display
+- Continuing to work with book_object and implementing Object Oriented Ruby principles - initial thoughts attempted but results were inaccessible to front-end so wouldn't display on page
 - Add pagination and extend API call to return more than 10 results
 - Explore Atomic Design further
