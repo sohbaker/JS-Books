@@ -4,6 +4,9 @@ The completed application has been deployed to: https://modern-library-2801.hero
 ## Task  
 Create an application that allows a user to search for books using the Google Books API.  
 
+## Screenshot
+<img width="1680" alt="Screenshot 2019-03-13 at 6 48 10 PM" src="https://user-images.githubusercontent.com/18250108/54306183-bbe69900-45c0-11e9-8481-4608f3873cc0.png">
+
 ## Code  
 This application is written in JavaScript ES6 and also uses Node-js.
 [Link](https://github.com/pelensky/JavaScriptStarterKit) to skeleton file setup with node and webpack  
