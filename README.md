@@ -5,6 +5,7 @@ The completed application has been deployed to: https://modern-library-2801.hero
 Create an application that allows a user to search for books using the Google Books API.  
 
 ## Screenshot
+_Search value: "hello"_
 <img width="1575" alt="Screenshot 2019-03-13 at 6 48 10 PM" src="https://user-images.githubusercontent.com/18250108/54306744-f997f180-45c1-11e9-95bc-a7011d0f7b36.png">
 
 ## Code  
