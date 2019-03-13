@@ -9,8 +9,7 @@ Create an application that allows a user to search for books using the Google Bo
 
 ## Code  
 This application is written in JavaScript ES6 and also uses Node-js.
-[Link](https://github.com/pelensky/JavaScriptStarterKit) to skeleton file setup with node and webpack  
-(Note: earlier commit history [here](https://github.com/sohbaker/Books-old) Subfolder was split out into this repository on 22nd January 2019.)  
+[Link](https://github.com/pelensky/JavaScriptStarterKit) to skeleton file setup with node and webpack
 
 ## To get started  
 1. Clone this repository to your local machine as explained [here](https://help.github.com/articles/cloning-a-repository/)  
